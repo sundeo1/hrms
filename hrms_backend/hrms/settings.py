@@ -41,7 +41,8 @@ DJANGO_APPS = [
 ]
 
 LOCAL_APPS = [
-    'staff'
+    'hrms_staff',
+    'hrms_auth'
 ]
 
 THIRD_PARTY_APPS = [
@@ -106,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Kampala'
 
 USE_I18N = True
 
@@ -117,11 +118,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+MEDIA_URL = 'media/'
+PHOTO_URL = 'media/photo/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'hrms_auth.HrmsUser'
 
 try:
     from hrms.env.local import *

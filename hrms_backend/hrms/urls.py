@@ -15,8 +15,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path, include
+from rest_framework.routers import DefaultRouter
+from rest_framework_swagger.views import get_swagger_view
+from django.conf import settings
+from django.conf.urls.static import static
+schema_view = get_swagger_view(title='HRMS API')
+
+router = DefaultRouter()
 
 urlpatterns = [
+    re_path('api/', include(router.urls)),
+    path('docs/', schema_view),
     path('admin/', admin.site.urls),
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
