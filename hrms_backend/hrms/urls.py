@@ -32,5 +32,6 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
     re_path(r'^$', router.get_api_root_view()),
     path('api/', include('hrms_auth.urls')),
+    path('api/', include('hrms_staff.urls')),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
