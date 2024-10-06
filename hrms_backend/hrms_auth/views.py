@@ -41,7 +41,7 @@ class HrmsUserViewSet(ReadOnlyModelViewSet):
 
             **Example:**
             ```
-            GET /api/hrms-user/verify-otp/
+            GET /api/accounts/users/verify-otp/
             {
                 "mobile_number": "1234567890",
                 "otp": "123456"
@@ -123,7 +123,7 @@ class HrmsUserViewSet(ReadOnlyModelViewSet):
 
             **Example:**
             ```
-            GET /api/hrms-user/request-otp/
+            GET /api/accounts/users/request-otp/
             {
                 "mobile_number": "1234567890"
             }
