@@ -4,7 +4,7 @@ import ErrorMessage from '../components/ErrorMessage';
 
 const OtpRequest = ({ setStep, setMobileNumber }) => {
   const [mobileNumber, setNumber] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');  // Add error state
+  const [errorMessage, setErrorMessage] = useState('');  
 
   const handleOtpRequest = async () => {
     try {
@@ -29,7 +29,7 @@ const OtpRequest = ({ setStep, setMobileNumber }) => {
       <h3>Register New Staff</h3>
       <h4>Enter mobile number to receive verification code on your phone</h4>
 
-      {/* Use the reusable ErrorMessage component */}
+      
       <ErrorMessage message={errorMessage} />
 
       <input
