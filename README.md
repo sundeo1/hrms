@@ -40,8 +40,9 @@ Found in folder hrms_frontend
 
 
 # Installation
+1. Create a .env file in the hrms_frontend folder and set the value to the `REACT_APP_API_BASE_URL` variable to point to the url where the backend is running for example `REACT_APP_API_BASE_URL=""http://localhost:8000/api"` if backend is running on localhost
 
-1. Run the following commands from project root 
+2. Run the following commands from project root 
 
 ```
 cd hrms_frontend
@@ -50,5 +51,5 @@ npm start
 
 ```
 
-2. Access the frontend at http://127.0.0.1:3000 in your browser
+3. Access the frontend at http://127.0.0.1:3000 in your browser
 
