@@ -4,6 +4,7 @@ from hrms_auth.models import HrmsUser
 from hrms_staff.models import Staff
 
 class StaffSerializer(serializers.ModelSerializer):
+    staff_id = serializers.CharField(read_only=True)
     mobile_number = serializers.CharField(write_only=True, required=True)
     otp = serializers.CharField(write_only=True, required=True)
     

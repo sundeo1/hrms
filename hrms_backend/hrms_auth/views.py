@@ -15,7 +15,7 @@ class HrmsUserViewSet(ReadOnlyModelViewSet):
     permission_classes = (AllowAny, )
 
     @action(
-        methods=["get"],
+        methods=["post"],
         detail=False,
         url_path="verify-otp",
         url_name="verify-otp",
@@ -41,7 +41,7 @@ class HrmsUserViewSet(ReadOnlyModelViewSet):
 
             **Example:**
             ```
-            GET /api/accounts/users/verify-otp/
+            POST /api/accounts/users/verify-otp/
             {
                 "mobile_number": "1234567890",
                 "otp": "123456"
@@ -95,7 +95,7 @@ class HrmsUserViewSet(ReadOnlyModelViewSet):
             )
         
     @action(
-        methods=["get"],
+        methods=["post"],
         detail=False,
         url_path="request-otp",
         url_name="request-otp",
@@ -123,7 +123,7 @@ class HrmsUserViewSet(ReadOnlyModelViewSet):
 
             **Example:**
             ```
-            GET /api/accounts/users/request-otp/
+            POST /api/accounts/users/request-otp/
             {
                 "mobile_number": "1234567890"
             }
@@ -157,7 +157,8 @@ class HrmsUserViewSet(ReadOnlyModelViewSet):
             user = HrmsUser.objects.get(mobile_number__endswith=mobile_number[-9:])
         except HrmsUser.DoesNotExist:
             user = HrmsUser.objects.create(
-                mobile_number = mobile_number
+                mobile_number = mobile_number,
+                username = mobile_number
             )
 
         otp = user.generate_otp()

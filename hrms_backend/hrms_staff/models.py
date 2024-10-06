@@ -20,3 +20,7 @@ class Staff(models.Model):
     
     class Meta:
         ordering = ("-id",)
+
+    @property
+    def staff_id(self):
+        return f"STAFF/{str(self.id).zfill(4)}"
