@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
-import axiosInstance from '../axiosInstance';  // Import the Axios instance
-import ErrorMessage from '../components/ErrorMessage'; // Import the ErrorMessage component
+import { Link } from 'react-router-dom'; 
+import axiosInstance from '../axiosInstance';  
+import ErrorMessage from '../components/ErrorMessage'; 
 
 const StaffList = () => {
   const [staffList, setStaffList] = useState([]);
@@ -11,8 +11,6 @@ const StaffList = () => {
   const fetchStaffList = async () => {
     try {
       const response = await axiosInstance.get('/accounts/staff/');
-      console.log(response.data); // Log the response for debugging
-      // Set staffList to the results array from the response
       setStaffList(response.data.results); 
     } catch (error) {
       setErrorMessage('Error fetching staff list');

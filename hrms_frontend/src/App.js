@@ -12,7 +12,7 @@ const App = () => {
   return (
     <Router>
       <div>
-        <TopMenu /> {/* Always visible menu */}
+        <TopMenu />
         <Routes>
           <Route path="/" element={<StaffOnboarding />} /> 
           <Route path="/staff-list" element={<StaffList />} /> 

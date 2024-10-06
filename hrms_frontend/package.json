@@ -15,7 +15,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "rm -rf ../hrms_backend/build && react-scripts build && cp -r build ../hrms_backend/build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
