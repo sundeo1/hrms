@@ -10,6 +10,7 @@ Found in folder hrms_backend
 Run the following commands from project root (preferably in a virtualenv)
 
 ```
+cd hrms_backend
 pip install -r requirements.txt
 python manage.py migrate
 
