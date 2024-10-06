@@ -20,6 +20,7 @@ from rest_framework.routers import DefaultRouter
 from rest_framework_swagger.views import get_swagger_view
 from django.conf import settings
 from django.conf.urls.static import static
+
 schema_view = get_swagger_view(title='HRMS API')
 
 router = DefaultRouter()
@@ -28,4 +29,8 @@ urlpatterns = [
     re_path('api/', include(router.urls)),
     path('docs/', schema_view),
     path('admin/', admin.site.urls),
+    path('api-auth/', include('rest_framework.urls')),
+    re_path(r'^$', router.get_api_root_view()),
+    path('api/', include('hrms_auth.urls')),
+
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
