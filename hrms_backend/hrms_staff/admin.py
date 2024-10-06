@@ -1,3 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
+from hrms_staff.models import Staff
+
+admin.register(Staff)
