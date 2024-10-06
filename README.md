@@ -33,3 +33,20 @@ python manage.py migrate
 
 3. Access the API Documentation at http://127.0.0.1:8000/docs/ and the backend at http://127.0.0.1:8000/admin/ in your browser
 
+
+# Frontend
+
+Found in folder hrms_frontend
+
+
+# Installation
+
+Run the following commands from project root 
+
+```
+cd hrms_frontend
+npm install
+npm start
+
+```
+
