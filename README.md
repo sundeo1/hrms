@@ -41,7 +41,7 @@ Found in folder hrms_frontend
 
 # Installation
 
-Run the following commands from project root 
+1. Run the following commands from project root 
 
 ```
 cd hrms_frontend
@@ -49,4 +49,6 @@ npm install
 npm start
 
 ```
+
+2. Access the API Documentation at http://127.0.0.1:3000 in your browser
 
