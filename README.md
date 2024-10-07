@@ -7,7 +7,8 @@ Found in folder hrms_backend
 
 # Installation
 
-Run the following commands from project root (preferably in a virtualenv)
+Run the following commands from project root (preferably in a virtualenv) after creating `local.py in hrms/env/local.py ` to override settings like databases and sms keys to match your local env.
+You can use the example provided in `hrms/env/local-example.py`
 
 ```
 cd hrms_backend
@@ -31,7 +32,7 @@ python manage.py migrate
         python manage.py rqworker iras_email_queue iras_sms_queue
         ```
 
-3. Access the API Documentation at http://127.0.0.1:8000/docs/ and the backend at http://127.0.0.1:8000/admin/ in your browser
+3. Access the API Documentation at http://127.0.0.1:8000/docs/ and the api at http://127.0.0.1:8000/api in your browser
 
 
 # Frontend
