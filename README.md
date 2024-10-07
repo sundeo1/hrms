@@ -6,7 +6,7 @@ Run `git clone https://github.com/sundeo1/hrms` to clone the project onto your m
 
 Found in folder hrms_backend
 
-   Run the command `cd hrms_backend` to go to the backend directory
+   Run the command `cd hrms/hrms_backend` to go to the backend directory
 
 # Setting Up
 
