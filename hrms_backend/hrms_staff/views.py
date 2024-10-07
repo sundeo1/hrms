@@ -1,11 +1,11 @@
 from rest_framework.viewsets import GenericViewSet
-from rest_framework.mixins import ListModelMixin, CreateModelMixin, RetrieveModelMixin
+from rest_framework.mixins import ListModelMixin, CreateModelMixin, RetrieveModelMixin, UpdateModelMixin
 from rest_framework.permissions import AllowAny
 from hrms_auth.helpers import DEFAULT_FILTER_BACKENDS
 from hrms_staff.models import Staff
 from hrms_staff.serializers import StaffSerializer
 
-class StaffViewSet(ListModelMixin, RetrieveModelMixin, CreateModelMixin, GenericViewSet):
+class StaffViewSet(ListModelMixin, RetrieveModelMixin, CreateModelMixin, UpdateModelMixin, GenericViewSet):
     """
         A viewset for managing staff information, including personal details such as surname, other names, 
         date of birth, and an ID photo.
@@ -15,12 +15,14 @@ class StaffViewSet(ListModelMixin, RetrieveModelMixin, CreateModelMixin, Generic
         - `list`: Retrieve a list of all staff members.
         - `retrieve`: Retrieve detailed information about a specific staff member by their ID.
         - `create`: Create a new staff member record with personal details.
+        - `update`: Update the details of a staff member.
 
 
         **Endpoints:**
         - `GET /api/accounts/staff/`: Retrieve a list of all staff members.
         - `GET /api/accounts/staff/{id}/`: Retrieve detailed information about a specific staff member by their ID.
         - `POST /api/accounts/staff/`: Create a new staff record with the provided personal details.
+        - `PATCH /api/accounts/staff/{id}`: Update the details of a specific staff member.
 
         **Examples:**
 
@@ -92,7 +94,7 @@ class StaffViewSet(ListModelMixin, RetrieveModelMixin, CreateModelMixin, Generic
         ```
 
         **Notes:**
-        - This viewset allows for listing, retrieving, and creating staff members with the required fields (`surname`, `other_name`, `date_of_birth`, `id_photo`).
+        - This viewset allows for listing, retrieving, updating and creating staff members with the required fields (`surname`, `other_name`, `date_of_birth`, `id_photo`).
         
     """
     

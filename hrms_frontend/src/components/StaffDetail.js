@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import axiosInstance from '../axiosInstance';  // Import the Axios instance
-import ErrorMessage from '../components/ErrorMessage'; // Import the ErrorMessage component
+import axiosInstance from '../axiosInstance';  
+import ErrorMessage from '../components/ErrorMessage'; 
 
 const StaffDetail = () => {
   const { id } = useParams();
   const [staff, setStaff] = useState(null);
-  const [errorMessage, setErrorMessage] = useState(''); // State for error message
-  const [loading, setLoading] = useState(true); // Loading state
+  const [errorMessage, setErrorMessage] = useState(''); 
+  const [loading, setLoading] = useState(true); 
 
   const fetchStaffDetail = async () => {
     try {
@@ -18,12 +18,12 @@ const StaffDetail = () => {
       const errorResponse = error.response?.data;
       if (errorResponse) {
         const errorMessages = Object.values(errorResponse).flat();  
-        setErrorMessage(errorMessages.join(', ')); // Join error messages into a single string
+        setErrorMessage(errorMessages.join(', ')); 
       } else {
         setErrorMessage('Error fetching staff details');
       }
     } finally {
-      setLoading(false); // Set loading to false regardless of success or failure
+      setLoading(false); 
     }
   };
 
@@ -31,21 +31,21 @@ const StaffDetail = () => {
     fetchStaffDetail();
   }, [id]);
 
-  if (loading) return <div>Loading...</div>; // Display loading text while fetching data
+  if (loading) return <div>Loading...</div>; 
 
   return (
     <div>
       <h2>Staff Details</h2>
       
-      {/* Display error message if any */}
+      
       <ErrorMessage message={errorMessage} />
       
-      {errorMessage ? ( // Check for error messages first
+      {errorMessage ? ( 
         <p>{errorMessage}</p>
       ) : (
         staff ? (
           <>
-            <p><strong>Staff ID:</strong> {staff.staff_id}</p>
+            <p><strong>Employee Number:</strong> {staff.staff_id}</p>
             <p><strong>Surname:</strong> {staff.surname}</p>
             <p><strong>Other Name:</strong> {staff.other_name}</p>
             <p><strong>Date of Birth:</strong> {staff.date_of_birth}</p>
