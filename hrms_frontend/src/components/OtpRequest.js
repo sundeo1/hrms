@@ -12,10 +12,10 @@ const OtpRequest = ({ setStep, setMobileNumber }) => {
       setMobileNumber(mobileNumber);
       setStep(2);  // Move to OTP verification step
     } catch (error) {
-      // Extract the actual error message(s) from the API response
+      
       const errorResponse = error.response?.data;
       if (errorResponse) {
-        // Combine all error messages if there are multiple fields with errors
+       
         const errorMessages = Object.values(errorResponse).flat();  
         setErrorMessage(errorMessages);
       } else {

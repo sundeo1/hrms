@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import axiosInstance from '../axiosInstance';  // Import the Axios instance
-import ErrorMessage from '../components/ErrorMessage';  // Import the ErrorMessage component
-import StaffDetail from '../components/StaffDetail';  // Import the StaffDetail component
+import axiosInstance from '../axiosInstance';  
+import ErrorMessage from '../components/ErrorMessage';  
+import StaffDetail from '../components/StaffDetail';  
 
 const StaffRegistration = ({ mobileNumber, verifiedOtp }) => {
   const [surname, setSurname] = useState('');
   const [otherName, setOtherName] = useState('');
   const [dateOfBirth, setDateOfBirth] = useState('');
   const [idPhoto, setIdPhoto] = useState(null);
-  const [errorMessage, setErrorMessage] = useState('');  // State for error message
-  const [registeredUser, setRegisteredUser] = useState(null); // State for the registered user
+  const [errorMessage, setErrorMessage] = useState('');  
+  const [registeredUser, setRegisteredUser] = useState(null); 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
