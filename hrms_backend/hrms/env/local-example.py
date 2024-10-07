@@ -39,3 +39,7 @@ DATABASES = {
         'PORT': '3306',
     }
 }
+
+SMS_BASE_URL = '1gg2kd.api.infobip.com'
+
+SMS_API_KEY = '382cb99fd0aa945329543738061987a7-9d60e8f2-ddb6-4203-88c2-091b28a0674e'
