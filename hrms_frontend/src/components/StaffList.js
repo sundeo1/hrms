@@ -41,7 +41,7 @@ const StaffList = () => {
               <th>Other Name</th>
               <th>Date of Birth</th>
               <th>ID Photo</th>
-              <th>Action</th> 
+              <th>Actions</th> {/* Actions column */}
             </tr>
           </thead>
           <tbody>
@@ -59,7 +59,9 @@ const StaffList = () => {
                   )}
                 </td>
                 <td>
-                  <Link to={`/staff/${staff.id}`}>View</Link> {/* Link to StaffDetail */}
+                  <Link to={`/staff/${staff.id}`}>View</Link> {/* View button */}
+                  {' | '}
+                  <Link to={`/staff/${staff.id}/edit`}>Edit</Link> {/* Edit button */}
                 </td>
               </tr>
             ))}

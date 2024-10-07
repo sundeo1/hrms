@@ -13,6 +13,12 @@ class StaffSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
     def validate(self, attrs):
+
+        request = self.context.get('request')  
+        if request and request.method == 'PATCH':
+        # Skip validation for PATCH requests
+            return attrs
+        
         mobile_number = attrs.get('mobile_number')  
         otp = attrs.get('otp')
         
