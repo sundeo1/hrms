@@ -27,6 +27,7 @@ Found in folder hrms_backend
 3. Starting the project
 
     - Shell setup
+    - 
       run these commands from project root after setting up a python virtual environment
         ```
         pip install -r requirements.txt
