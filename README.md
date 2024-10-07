@@ -13,9 +13,18 @@ Found in folder hrms_backend
 1. Create `local.py in hrms/env/local.py ` to override settings like databases and sms keys to match your local env.
    You can use the example provided in `hrms/env/local-example.py`.
 
-   For testing purpose you can use `db.sqlite` as database
+   For testing purposes, you can use `db.sqlite` as a database
 
-2. Starting the project
+2. For the SMS service to run to receive the verification code, you can get a free API key at https://www.infobip.com/signup?signup_source=InfobipProductPageSMS to use for the
+
+   ```
+   SMS_BASE_URL
+   SMS_API_KEY
+   ```
+
+   variables.
+
+3. Starting the project
 
     - Shell setup
       run these commands from project root after setting up a python virtual environment
@@ -27,7 +36,7 @@ Found in folder hrms_backend
         
         ```
 
-3. Access the API Documentation at http://127.0.0.1:8000/docs/ and the api at http://127.0.0.1:8000/api in your browser
+4. Access the API Documentation at http://127.0.0.1:8000/docs/ and the api at http://127.0.0.1:8000/api in your browser
 
 
 # Frontend
@@ -36,10 +45,10 @@ Found in folder hrms_frontend
 
 run the command 
 
-```
-cd ..
-cd hrms_frontend
-```
+   ```
+   cd ..
+   cd hrms_frontend
+   ```
 
 to go to the frontend directory
 
